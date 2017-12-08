@@ -1,5 +1,5 @@
 # chicago-crime-map
-Chicago's crime map
+Chicago's crime map. A student could easily check recent crime records near a specific school area in Chicago. Such as University of Chicago, Illinois Institute of Technology, University of Illinois at Chicago, Northwestern University, etc.
 
 ### Tech
 This Web App uses a number of open source libraries and tools:
