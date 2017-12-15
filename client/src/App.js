@@ -1,35 +1,25 @@
 import React, { Component } from 'react';
-import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { Router, Route, NavLink,Switch } from 'react-router-dom';
-import {LinkContainer} from 'react-router-bootstrap';
+//import { Navbar, Nav, NavItem } from 'react-bootstrap';
+import { Router, Route,Switch } from 'react-router-dom';
 import History from './History';
 import Footer from './Footer';
-import FontAwesome from 'react-fontawesome';
+import Header from './Header';
+import TestPage from './TestPage.js';
 import './App.css';
 
 class App extends Component {
   render() {
-    return (
-	<div className="site">
+      return (
+	  <div className="site">
 	  <Router history = {History}>
 	    <div className="site-content">
-	      <Navbar fluid >
-		<Navbar.Header>
-		  <Navbar.Brand>
-		    <a href="/">Map</a>
-		  </Navbar.Brand>
-		</Navbar.Header>
-                  <Nav >
-                    <NavItem>
-		      <p>News</p>
-                    </NavItem>
-		    <LinkContainer to="/faq">
-                    <NavItem>
-                      <p>FAQ</p>
-                    </NavItem>
-                  </LinkContainer>
-		  </Nav>
-	      </Navbar>
+	      <Header/>
+	      <Switch>
+		<Route exact path="/" component={TestPage} />
+		<Route path="/news" component={TestPage}/>
+		<Route path="/faq" component={TestPage}/>
+		<Route component={NoMatch}/>
+		</Switch>
 	    </div>
 	    </Router>
 	  <Footer/>
@@ -38,4 +28,9 @@ class App extends Component {
   }
 }
 
+const NoMatch = ({ location }) => (
+        <div>
+        <h3>No match for <code>{location.pathname}</code></h3>
+        </div>
+);
 export default App;
