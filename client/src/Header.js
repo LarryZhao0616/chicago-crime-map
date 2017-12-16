@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import { Navbar, Nav, NavItem } from 'react-bootstrap';
-import { Router, Route, NavLink,Switch } from 'react-router-dom';
+//import { Router, Route, NavLink,Switch } from 'react-router-dom';
 import {LinkContainer} from 'react-router-bootstrap';
-import History from './History';
-import Footer from './Footer';
-//import Header from './Header';
-import FontAwesome from 'react-fontawesome';
+//import History from './History';
 import './App.css';
 
 class Header extends Component {
