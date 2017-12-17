@@ -1,0 +1,34 @@
+
+.MapContainerOriginal{
+    margin-top:-2rem;
+    width: 100vw;
+    height: 75vh;
+    position: relative;
+    margin-bottom:3rem;
+}
+
+.MapSearch{
+    //    position:absolute;
+    
+}
+
+.MapMap{
+    //    position:absolute;
+    margin-top:-20px;
+//    width:100vw;
+//    height:60vh;
+//    position:absolute;
+}
+
+@media screen and (max-width: 768px){
+    .search_button{
+	width:7rem;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .search_button{
+        width:15rem;
+    }
+}
+

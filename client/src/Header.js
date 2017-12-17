@@ -8,30 +8,35 @@ import './App.css';
 class Header extends Component {
   render() {
       return (
-	  <Navbar fluid >
-	    <Navbar.Header>
-	      <Navbar.Brand>
-		<a href="/">Map</a>
-	      </Navbar.Brand>
-	      <Navbar.Toggle/>
-	    </Navbar.Header>
-	    <Navbar.Collapse>
-            <Nav >
-	      <LinkContainer to="/news">
-                <NavItem>
-		  <p>News</p>
-                </NavItem>
-	      </LinkContainer>
-	      <LinkContainer to="/faq">
-                <NavItem>
-                  <p>FAQ</p>
-                </NavItem>
-              </LinkContainer>
-	    </Nav>
-	    </Navbar.Collapse>
-	  </Navbar>
+	  <div>
+	    <Navbar inverse fluid>
+	      <Navbar.Header>
+		<Navbar.Brand>
+		  <a href="/">Map</a>
+		</Navbar.Brand>
+		<Navbar.Toggle/>
+	      </Navbar.Header>
+	      <Navbar.Collapse>
+		<Nav >
+		  <LinkContainer to="/news">
+                    <NavItem>
+		      <p>News</p>
+                    </NavItem>
+		  </LinkContainer>
+		  <LinkContainer to="/faq">
+                    <NavItem>
+                      <p>FAQ</p>
+                    </NavItem>
+		  </LinkContainer>
+		</Nav>
+	      </Navbar.Collapse>
+	    </Navbar>
+	  </div>
       );
   }
+
 }
+
+
 
 export default Header;
