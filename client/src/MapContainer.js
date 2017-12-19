@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormGroup, InputGroup, Button, FormControl} from 'react-bootstrap';
+import {FormGroup, InputGroup, Button, FormControl, Glyphicon, Form} from 'react-bootstrap';
 import {Map, GoogleApiWrapper} from 'google-maps-react';
 import './MapComponent.css';
 //import Map from './Map';
@@ -11,19 +11,24 @@ export class MapContainer extends React.Component {
 	}
 
 	var google = window.google;
+
 	
 	return (
 	    <div className="MapContainerOriginal">
-	      <div className="MapSearch">
-		<FormGroup>
-		  <InputGroup >
-		    <FormControl type="text" />
-		    <InputGroup.Button>
-                      <Button className="search_button">Search</Button>
-                    </InputGroup.Button>
-		  </InputGroup>
-		</FormGroup>
+	      <Form>
+	      <div className="form-group has-feedback has-feedback-left">
+		<input type="text" className="form-control"
+                       placeholder="Search your school"/>
+		<i className="fa fa-search form-control-feedback"></i>
+		<Button className="search_button" type="submit">Search</Button>
 	      </div>
+	      </Form>
+	      {/*
+	      <div class="inner-addon left-addon">
+		<i class="fa fa-search"></i>
+		<input type="text" class="form-control" placeholder="Search" />
+              </div>
+	      */}
 	      <div className="MapMap">
 		<Map
 		  google={this.props.google}
