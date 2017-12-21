@@ -1,19 +1,13 @@
 .footer {
-  padding: 15px;
+  padding: 1.5em;
 //  margin-top: 2rem;
   text-align: center;
   background-color: rgb(51, 51, 51);
   color: white;
 }
 
-.footer h1 {
-  font-weight: bold;
-  font-size: 2rem;
-  line-height: 5rem;
-}
-
 .footer p {
-  font-size: 1.5rem;
+  font-size: 1em;
 }
 
 .footer a {

@@ -7,17 +7,13 @@
     margin-bottom:3rem;
 }
 
-.MapSearch{
-    
-}
-
-.MapSearch FormControl{
-    padding-left:5rem;
+.search_form{
+//    height:4em;
 }
 
 .MapMap{
-    //    position:absolute;
-    margin-top:-15px;
+//    position:absolute;
+margin-top:-1.1em;
 //    width:100vw;
 //    height:60vh;
 //    position:absolute;

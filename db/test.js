@@ -9,12 +9,11 @@ client.connect(function(err) {
   if(err) {
     return console.error('could not connect to postgres', err);
   }
-  client.query('SELECT NOW() AS "theTime"', function(err, result) {
+  client.query('SELECT id,date,time,primary_type,description,beat,community_area,latitude,longitude,location FROM chicago_crimes_1', function(err, result) {
     if(err) {
       return console.error('error running query', err);
     }
-    console.log(result.rows[0].theTime);
-    //output: Tue Jan 15 2013 19:12:47 GMT-600 (CST)
+    console.log(result.rows[0]);
     client.end();
   });
 });

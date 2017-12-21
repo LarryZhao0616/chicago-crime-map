@@ -1,10 +1,30 @@
 import React from 'react';
-import {FormGroup, InputGroup, Button, FormControl, Glyphicon, Form} from 'react-bootstrap';
+import {Button, Form} from 'react-bootstrap';
 import {Map, GoogleApiWrapper} from 'google-maps-react';
 import './MapComponent.css';
 //import Map from './Map';
+import axios from 'axios';
 
 export class MapContainer extends React.Component {
+    constructor(props){
+	super(props);
+	this.state={
+	    google:{}
+	};
+    }
+    
+    componentWillMount(){
+	axios.get('/crime/').catch(e=>{
+	    console.log(e);
+	});
+	
+    }
+
+    componentDidUpdate(){
+        console.log("didupdate:",this.props.google);
+
+    }
+    
     render() {
 	if (!this.props.loaded) {
 	    return <div>Loading...</div>;
@@ -15,13 +35,13 @@ export class MapContainer extends React.Component {
 	
 	return (
 	    <div className="MapContainerOriginal">
-	      <Form>
-	      <div className="form-group has-feedback has-feedback-left">
-		<input type="text" className="form-control"
-                       placeholder="Search your school"/>
-		<i className="fa fa-search form-control-feedback"></i>
-		<Button className="search_button" type="submit">Search</Button>
-	      </div>
+	      <Form className="search_form">
+		<div className="form-group has-feedback has-feedback-left">
+		  <input type="text" className="form-control"
+			 placeholder="Search your school"/>
+		  <i className="fa fa-search form-control-feedback"></i>
+		  <Button className="search_button" type="submit">Search</Button>
+		</div>
 	      </Form>
 	      {/*
 	      <div class="inner-addon left-addon">
