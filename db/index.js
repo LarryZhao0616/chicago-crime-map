@@ -11,6 +11,11 @@ var pool = new pg.Pool({
 });
 
 module.exports = {
+  query: (text, params) => pool.query(text, params)
+}
+
+/*
+module.exports = {
     query: (text, params, callback) => {
 	const start = Date.now();
 	return pool.query(text, params, (err,res) =>{
@@ -22,3 +27,4 @@ module.exports = {
     }
 };
  
+ */
