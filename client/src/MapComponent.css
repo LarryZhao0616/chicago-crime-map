@@ -1,22 +1,17 @@
 
 .MapContainerOriginal{
     margin-top:-2rem;
-    width: 100vw;
-    height: 75vh;
+    width: 100%;
     position: relative;
     margin-bottom:3rem;
 }
 
 .search_form{
-//    height:4em;
+    height:2.4em;
 }
 
 .MapMap{
-//    position:absolute;
-margin-top:-1.1em;
-//    width:100vw;
-//    height:60vh;
-//    position:absolute;
+    height:calc(100vh - 120px);
 }
 
 @media screen and (max-width: 768px){
@@ -38,10 +33,6 @@ margin-top:-1.1em;
     right:0px;
 }
 
-
-.inner-addon { 
-    position: relative;
-}
 
 /* style icon */
 .inner-addon .fa {
