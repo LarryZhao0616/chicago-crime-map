@@ -12,7 +12,7 @@ class Header extends Component {
 	    <Navbar inverse fluid>
 	      <Navbar.Header>
 		<Navbar.Brand>
-		  <a href="/">Map</a>
+		  <a href="/">Chicago Crime Map</a>
 		</Navbar.Brand>
 		<Navbar.Toggle/>
 	      </Navbar.Header>
