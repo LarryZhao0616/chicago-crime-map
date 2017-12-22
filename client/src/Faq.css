@@ -1,0 +1,15 @@
+.faq{
+    display: flex;
+    margin-top:-20px;
+    min-height:calc(100vh - 50px);
+    flex-direction: column;
+
+}
+
+.faq_content{
+    flex:1;
+}
+
+.faq_content h1{
+
+}

@@ -6,20 +6,16 @@ const Footer = () => {
   
   return (
 	  <div className="footer">
-	  <a href="https://github.com/LarryZhao0616/chicago-crime-map"> <i href="https://github.com/LarryZhao0616/chicago-crime-map" className="fa fa-github-square fa-2x fa-cog" aria-hidden="true"></i></a>
-	  <a href="http://www.facebook.com"> <i className="fa fa-facebook-square fa-2x fa-cog" href="/" aria-hidden="true"></i></a>
-	  <hr />
-	  <p>Copyright &copy;2017 All Rights Reserved</p>
+	    <div className="copyright">
+              <p>Copyright Sihan Larry Zhao © 2017-2018</p>
+            </div>
+	    <div className="icons">
+	      <a href="http://www.linkedin.com/in/zhsh0616" target='_blank' rel="noopener noreferrer"> <i className="fa fa-linkedin-square fa-2x fa-cog" aria-hidden="true"></i></a>
+	      <a href="https://github.com/LarryZhao0616/chicago-crime-map" target='_blank' rel="noopener noreferrer"> <i className="fa fa-github-square fa-2x fa-cog" aria-hidden="true"></i></a>
+	      <a href="https://www.facebook.com/profile.php?id=1637227465" target='_blank' rel="noopener noreferrer"> <i className="fa fa-facebook-square fa-2x fa-cog" aria-hidden="true"></i></a>
+	    </div>
 	  </div>
   );
 };
-//<div className="container" id="social-network-links">
-  //      {links.map(linkItem => {
-//          return (
-          //  <a href={linkItem.link} key={linkItem.link}>
-        //      <img src={linkItem.image} alt="social network link" />
-      //      </a>
-    //      );
-  //      })}
-//      </div>
+
 export default Footer;

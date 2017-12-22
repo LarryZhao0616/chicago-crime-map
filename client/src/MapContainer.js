@@ -9,16 +9,29 @@ export class MapContainer extends React.Component {
     constructor(props){
 	super(props);
 	this.state={
+	    whole_crime_data:{},
 	    google:{}
 	};
+	this.isEmpty = this.isEmpty.bind(this);
+    }
+
+    isEmpty(obj){
+	return Object.keys(obj).length === 0 && obj.constructor === Object;
     }
     
     componentWillMount(){
-	axios.get('/crime/').catch(e=>{
-	    console.log(e);
-	});
-	
+	if(this.isEmpty(this.state.whole_crime_data)){
+	    axios.get('/crime/')
+		.then(res=>{
+		    this.setState({whole_crime_data: res});
+		    console.log(res);
+		})
+		.catch(e=>{
+		    console.log(e);
+		});
+	}
     }
+
 
     componentDidUpdate(){
         console.log("didupdate:",this.props.google);
