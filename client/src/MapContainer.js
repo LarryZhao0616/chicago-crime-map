@@ -53,7 +53,7 @@ export class MapContainer extends React.Component {
 		  <input type="text" className="form-control"
 			 placeholder="Search your school"/>
 		  <i className="fa fa-search form-control-feedback"></i>
-		  <Button className="search_button" type="submit">Search</Button>
+		  <Button className="search_button" bsStyle="info" type="submit">Search</Button>
 		</div>
 	      </Form>
 	      {/*

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Router, Route,Switch } from 'react-router-dom';
 import History from './History';
 import Header from './Header';
-import News from './news';
+import News from './News';
 import Faq from './Faq';
 //import TestPage from './TestPage';
 import MapContainer from './MapContainer';
