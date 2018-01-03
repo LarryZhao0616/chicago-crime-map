@@ -14,7 +14,7 @@ class NewsDetails extends React.Component{
             <div className="news_holder">
 	      <div className="news_words">
 		<div className="news_title">
-		  <a href={this.props.news.link} target='_blank' rel="noopener noreferrer"><h3>{this.props.news.title}</h3></a>
+		  <a href={this.props.news.link} target='_blank' rel="noopener noreferrer"><p>{this.props.news.title}</p></a>
 		</div>
 		<div className="news_parts">
 		  <p>{this.props.news.parts}</p>
@@ -30,7 +30,7 @@ class NewsDetails extends React.Component{
 		</div>
 	      </div>
 	      <div className="news_image">
-		<img src={this.props.news.src} alt="news_images"/>
+		<img src={this.props.news.imgsrc} alt="news_images"/>
 	      </div>
             </div>
         );
