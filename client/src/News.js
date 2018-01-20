@@ -9,12 +9,13 @@ class News extends React.Component{
     constructor(props){
 	super(props);
 	this.state={
+	    newsdata:[]
 	};
     }
 
     componentDidMount() {
 	axios.get('/newsdata').then(res => {
-	    this.setState({newsdata: res.data});
+		this.setState({newsdata: res.data});
 	});
     }
     
