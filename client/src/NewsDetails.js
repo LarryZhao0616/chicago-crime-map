@@ -1,6 +1,6 @@
 import React from 'react';
 import './News.css';
-
+import {Label} from 'react-bootstrap'
 class NewsDetails extends React.Component{
 /*
     constructor(props){
@@ -21,11 +21,10 @@ class NewsDetails extends React.Component{
 		</div>
 		<div className="date_from_hori">
 		  <div className="news_date">
-		    <p>{this.props.news.date}</p>
+		    <Label>{this.props.news.date}</Label>
 		  </div>
-		  <div className="smallDivider">.</div>
-		  <div className="news_from">
-		    <p>from: {this.props.news.from}</p>
+		<div className="news_from">
+		    <Label>{this.props.news.from}</Label>
 		  </div>
 		</div>
 	      </div>

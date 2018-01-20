@@ -5,12 +5,12 @@ var News = require('../models/News.js');
 
 
 var newsdata = {
-    title :"Suspects in carjacked Mustang lead cops on nearly hour-long chase around Chicago",
-    link :"https://chicago.suntimes.com/news/suspects-in-carjacked-mustang-lead-cops-on-nearly-hour-long-chase-around-chicago/",
+    title :"15-year-old boy shot multiple times after answering front door of Lawndale home",
+    link :"http://abc7chicago.com/15-year-old-boy-shot-multiple-times-after-answering-front-door-of-lawndale-home/2966202/",
     date :"Jan 19, 2018",
-    from :"Chicago Sun-Times",
-    imgsrc :"https://suntimesmedia.files.wordpress.com/2018/01/mustangchase1.jpg?w=637&zoom=2" ,
-    parts :"A high-speed chase of a carjacked Mustang that lasted nearly 45 minutes early Friday resulted in the arrest of two people in the South Side Gresham..."
+    from :"abc7chicago.com",
+    imgsrc :"http://cdn.abclocal.go.com/content/wls/images/cms/automation/images/2966207_630x354.jpg" ,
+    parts :"A 15-year-old boy was shot when he answered the door to his Lawndale home Thursday evening, police said..."
 }
 
 
