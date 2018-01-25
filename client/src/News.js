@@ -20,7 +20,7 @@ class News extends React.Component{
     }
     
     render(){
-	const newsList = this.state.newsdata || [];
+	const newsList = this.state.newsdata.reverse() || [];
 	
 	return (
 	    <div className="news">

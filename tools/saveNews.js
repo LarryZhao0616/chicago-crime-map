@@ -5,12 +5,12 @@ var News = require('../models/News.js');
 
 
 var newsdata = {
-    title :"15-year-old boy shot multiple times after answering front door of Lawndale home",
-    link :"http://abc7chicago.com/15-year-old-boy-shot-multiple-times-after-answering-front-door-of-lawndale-home/2966202/",
-    date :"Jan 19, 2018",
-    from :"abc7chicago.com",
-    imgsrc :"http://cdn.abclocal.go.com/content/wls/images/cms/automation/images/2966207_630x354.jpg" ,
-    parts :"A 15-year-old boy was shot when he answered the door to his Lawndale home Thursday evening, police said..."
+    title :"Police probe 4 armed robberies in south suburbs, northwest Indiana",
+    link :"http://www.chicagotribune.com/suburbs/daily-southtown/news/ct-sta-armed-robberies-investigation-st-0126-20180125-story.html",
+    date :"Jan 25, 2018",
+    from :"Chicago Tribune",
+    imgsrc :"http://www.trbimg.com/img-5a6a352b/turbine/ct-ctlh-ct-sta-armed-robberies-investiga-20180125/777/777x437" ,
+    parts :"Four area police departments are collaborating in an investigation into a string of armed robberies believed..."
 }
 
 
