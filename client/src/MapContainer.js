@@ -2,30 +2,30 @@ import React from 'react';
 import {Button, Form} from 'react-bootstrap';
 import {Map, GoogleApiWrapper} from 'google-maps-react';
 import './MapComponent.css';
-//import Map from './Map';
+import ParseCrimeDocument from './ParseCrimeData';
+import Marker from './MapMarker';
 import axios from 'axios';
 
 export class MapContainer extends React.Component {
     constructor(props){
 	super(props);
 	this.state={
-	    whole_crime_data:{},
+	    whole_crime_data:[],
 	    google:{}
 	};
 	this.isEmpty = this.isEmpty.bind(this);
     }
 
-    isEmpty(obj){
-	return Object.keys(obj).length === 0 && obj.constructor === Object;
+    isEmpty(arr){
+	return arr.length === 0 && arr.constructor === Array;
     }
     
     componentWillMount(){
 	if(this.isEmpty(this.state.whole_crime_data)){
 	    axios.get('/crime/')
-		.then(res=>{
-		    this.setState({whole_crime_data: res});
-		    console.log(res);
-		})
+		.then(res => res.data)
+		.then(whole_crime_data => ParseCrimeDocument(whole_crime_data))
+		.then(whole_crime_data => this.setState({ whole_crime_data }))
 		.catch(e=>{
 		    console.log(e);
 		});
@@ -34,7 +34,7 @@ export class MapContainer extends React.Component {
 
 
     componentDidUpdate(){
-        console.log("didupdate:",this.props.google);
+//        console.log("didupdate:",this.props.google);
 
     }
     
@@ -43,7 +43,9 @@ export class MapContainer extends React.Component {
 	    return <div>Loading...</div>;
 	}
 
-	var google = window.google;
+	const google = window.google;
+	const crimedata = this.state.whole_crime_data;
+	
 
 	
 	return (
@@ -73,12 +75,19 @@ export class MapContainer extends React.Component {
 		      lng: -87.6359
 		  }}
 		  >
+		  {crimedata.map(crime => <Marker position={crime.pos} key={crime.id} />)}
 		</Map>
 	      </div>
 	    </div>
 	);
     }
 }
+
+MapContainer.propTypes = {
+};
+
+MapContainer.defaultProps = {
+};
 
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyAoJlSl4IbOSUHqU8cSjmoRfYCAR5vzgeo'
