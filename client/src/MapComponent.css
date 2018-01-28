@@ -4,6 +4,7 @@
     width: 100%;
     position: relative;
     margin-bottom:3rem;
+    background-color:###;
 }
 
 .search_form{
@@ -11,7 +12,8 @@
 }
 
 .MapMap{
-    height:calc(100vh - 120px);
+//    margin-top:4em;
+//    height:calc(100vh - 120px);
 }
 
 @media screen and (max-width: 768px){

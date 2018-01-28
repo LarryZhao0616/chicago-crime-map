@@ -1,12 +1,13 @@
 import React from 'react';
 import {Button, Form} from 'react-bootstrap';
-import {Map, GoogleApiWrapper} from 'google-maps-react';
+//import {Map, GoogleApiWrapper} from 'google-maps-react';
 import './MapComponent.css';
-import ParseCrimeDocument from './ParseCrimeData';
-import Marker from './MapMarker';
+import MyMap from './MapComponent';
+//import ParseCrimeDocument from './ParseCrimeData';
+//import Marker from './MapMarker';
 import axios from 'axios';
 
-export class MapContainer extends React.Component {
+export default class MapContainer extends React.Component {
     constructor(props){
 	super(props);
 	this.state={
@@ -24,7 +25,7 @@ export class MapContainer extends React.Component {
 	if(this.isEmpty(this.state.whole_crime_data)){
 	    axios.get('/crime/')
 		.then(res => res.data)
-		.then(whole_crime_data => ParseCrimeDocument(whole_crime_data))
+//		.then(whole_crime_data => ParseCrimeDocument(whole_crime_data))
 		.then(whole_crime_data => this.setState({ whole_crime_data }))
 		.catch(e=>{
 		    console.log(e);
@@ -39,12 +40,13 @@ export class MapContainer extends React.Component {
     }
     
     render() {
-	if (!this.props.loaded) {
-	    return <div>Loading...</div>;
-	}
+//	if (!this.props.loaded) {
+//	    return <div>Loading...</div>;
+//	}
 
-	const google = window.google;
+//	const google = window.google;
 	const crimedata = this.state.whole_crime_data;
+//	console.log(crimedata);
 	
 
 	
@@ -65,18 +67,7 @@ export class MapContainer extends React.Component {
               </div>
 	      */}
 	      <div className="MapMap">
-		<Map
-		  google={this.props.google}
-		  zoom={11}
-		  zoomControl={true}
-		  zoomControlOptions={{position:google.maps.ControlPosition.LEFT_CENTER}}
-		  initialCenter={{
-		      lat: 41.8789,
-		      lng: -87.6359
-		  }}
-		  >
-		  {crimedata.map(crime => <Marker position={crime.pos} key={crime.id} />)}
-		</Map>
+		<MyMap />
 	      </div>
 	    </div>
 	);
@@ -89,6 +80,4 @@ MapContainer.propTypes = {
 MapContainer.defaultProps = {
 };
 
-export default GoogleApiWrapper({
-    apiKey: 'AIzaSyAoJlSl4IbOSUHqU8cSjmoRfYCAR5vzgeo'
-})(MapContainer);
+

@@ -12,7 +12,7 @@ export default class MapMarker extends React.Component {
     componentDidUpdate(prevProps) {
 	// component updated
 	if ((this.props.map !== prevProps.map) ||
-	    (this.props.position !== prevProps.position)) {
+	    (this.props.lat !== prevProps.lat)) {
             // The relevant props have changed
 	    this.renderMarker();
 	}
@@ -20,11 +20,11 @@ export default class MapMarker extends React.Component {
     
     renderMarker() {
 	let {
-            map, google, position
+            map, google, lat, lon
 	} = this.props;
 	
-	let pos = position;
-	position = new google.maps.LatLng(pos.lat, pos.lng);
+//	let pos = {lat:lat , lon:lon};
+	let position = new google.maps.LatLng(lat, lon);
 	
 	const pref = {
             map: map,

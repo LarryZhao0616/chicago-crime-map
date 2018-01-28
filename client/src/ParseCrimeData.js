@@ -13,20 +13,21 @@ const parseSingleCrimeDocument = crimeDocument => {
     } = crimeDocument;
 
     const pos = {lat:latitude , lng:longitude};
+    console.log('lalal',pos);
 
-     return {
-	 beat,
-         community_area,
-         date,
-         description,
-         id,
-         latitude,
-         location,
-         longitude,
-         primary_type,
-         time,
-	 pos
-     };
+    return {
+	beat,
+        community_area,
+        date,
+        description,
+        id,
+        latitude,
+        location,
+        longitude,
+        primary_type,
+        time,
+	pos
+    };
 };
 
 const ParseCrimeDocument = crimeList => {
