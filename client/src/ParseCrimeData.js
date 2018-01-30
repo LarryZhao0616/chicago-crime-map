@@ -12,8 +12,8 @@ const parseSingleCrimeDocument = crimeDocument => {
 	time
     } = crimeDocument;
 
-    const pos = {lat:latitude , lng:longitude};
-    console.log('lalal',pos);
+//    const pos = {lat:latitude , lng:longitude};
+//    console.log('lalal',pos);
 
     return {
 	beat,

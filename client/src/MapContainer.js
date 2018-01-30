@@ -22,34 +22,27 @@ export default class MapContainer extends React.Component {
     }
     
     componentWillMount(){
-	if(this.isEmpty(this.state.whole_crime_data)){
-	    axios.get('/crime/')
-		.then(res => res.data)
-//		.then(whole_crime_data => ParseCrimeDocument(whole_crime_data))
-		.then(whole_crime_data => this.setState({ whole_crime_data }))
-		.catch(e=>{
-		    console.log(e);
-		});
-	}
+
     }
 
 
-    componentDidUpdate(){
-//        console.log("didupdate:",this.props.google);
-
+    componentDidMount(){
+        axios.get('/crime/')
+            .then(res => res.data)
+	    //.then(whole_crime_data => ParseCrimeDocument(whole_crime_data))
+            .then(whole_crime_data => this.setState({ whole_crime_data }))
+            .catch(e=>{
+                console.log(e);
+            });
     }
     
     render() {
-//	if (!this.props.loaded) {
+//	if (this.state.whole_crime_data.length==0) {
 //	    return <div>Loading...</div>;
 //	}
-
 //	const google = window.google;
 	const crimedata = this.state.whole_crime_data;
 //	console.log(crimedata);
-	
-
-	
 	return (
 	    <div className="MapContainerOriginal">
 	      <Form className="search_form">
@@ -67,7 +60,7 @@ export default class MapContainer extends React.Component {
               </div>
 	      */}
 	      <div className="MapMap">
-		<MyMap />
+		<MyMap markers={crimedata}/>
 	      </div>
 	    </div>
 	);
