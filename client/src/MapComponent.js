@@ -2,28 +2,27 @@ import React from "react";
 //import { compose, withProps, withHandlers } from "recompose";
 import PropTypes from 'prop-types';
 import { Marker, withScriptjs, withGoogleMap, GoogleMap} from "react-google-maps";
-import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
+//import MarkerClusterer from "react-google-maps/lib/components/addons/MarkerClusterer";
 
+/*
+<Marker
+            position={marker.coordinates}
+            id={marker.id}
+            key={marker.id}
+            icon={url}
+            style={{height: "5xpx", width: "5px"}}
+            className={'marker'}
+            />
+*/
 
 const RenderMap = withScriptjs(withGoogleMap(props =>(
     <GoogleMap
       defaultZoom={11}
       defaultCenter={{ lat: 41.8789, lng: -87.6359 }}>
-      <MarkerClusterer
-	onClick={props.onMarkerClustererClick}
-	averageCenter
-	enableRetinaIcons
-	gridSize={60}>
-	{props.markers.map(marker => {
-	    if( (marker.latitude === null) || (marker.longitude === null)){
-	    	<Marker
-		      key={marker.id}
-		      position={{ lat: marker.latitude, lng: marker.longitude===null }}
-		      />
-		}
-		})}
-      </MarkerClusterer>
-	</GoogleMap>
+      <Marker
+      position={{ lat: -41.878, lng: -87.635 }}
+	/>
+    </GoogleMap>
 )));
 			       
 class MapComponent extends React.Component{
@@ -37,9 +36,9 @@ class MapComponent extends React.Component{
             return true;
         }
 	
-        if (this.props.map !== nextProps.map) {
-            return true;
-        }
+//        if (this.props.map !== nextProps.map) {
+//            return true;
+//        }
 
         if (this.state === nextState) {
             return false;
@@ -55,17 +54,17 @@ class MapComponent extends React.Component{
     }
 
     render(){
+	console.log(this.props.markers);
 	return(
-	    <div>
 	      <RenderMap
 		googleMapURL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAoJlSl4IbOSUHqU8cSjmoRfYCAR5vzgeo&v=3.exp&libraries=geometry,drawing,places"
+		loadingElement = {<div style={{ height: `100%` }} />}
+                containerElement = {<div style={{ height: `calc(100vh - 85px)` }} />}
+                mapElement = {<div style={{ height: `calc(100vh - 85px)` }} />}
 		markers = {this.props.markers}
 		onMarkerClustererClick={this.onMarkerClustererClick}
-		loadingElement = {<div style={{ height: `100%` }} />}
-		containerElement = {<div style={{ height: `calc(100vh - 85px)` }} />}
-		mapElement = {<div style={{ height: `calc(100vh - 85px)` }} />}
-		/>
-	    </div>
+		>
+		</RenderMap>
 	)
     }
 }
